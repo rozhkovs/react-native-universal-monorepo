@@ -2,17 +2,9 @@
   "name": "react-native-universal-project",
   "version": "0.0.1",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ],
-    "nohoist": [
-      "**/@react-native-async-storage/async-storage",
-      "**/react",
-      "**/react-native",
-      "**/react-native/**"
-    ]
-  },
+  "workspaces": [
+    "platforms/*"
+  ],
   "scripts": {
     "lint:check": "ultra -r lint:check",
     "lint:fix": "ultra -r lint:fix",
