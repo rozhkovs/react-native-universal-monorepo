@@ -9,9 +9,9 @@
     "studio": "studio android",
     "xcode": "xed ios",
     "pods": "pod-install",
-    "lint": "eslint .",
+    "lint:check": "eslint .",
     "lint:fix": "yarn lint --fix",
-    "test": "jest --passWithNoTests"
+    "test:run": "jest --passWithNoTests"
   },
   "dependencies": {
     "@my-app/app": "*",
@@ -33,5 +33,8 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "installConfig": {
+    "hoistingLimits": "workspaces"
   }
 }

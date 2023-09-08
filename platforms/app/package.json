@@ -4,11 +4,11 @@
   "private": true,
   "main": "src",
   "scripts": {
-    "lint": "eslint .",
+    "lint:check": "eslint .",
     "lint:fix": "yarn lint --fix",
-    "test": "jest --passWithNoTests",
+    "test:run": "jest --passWithNoTests",
     "test:watch": "yarn jest --watch",
-    "typecheck": "tsc"
+    "tsc:check": "tsc"
   },
   "devDependencies": {
     "@react-native-async-storage/async-storage": "^1.15.7",
@@ -20,5 +20,8 @@
     "@react-native-async-storage/async-storage": "*",
     "react": "*",
     "react-native": "*"
+  },
+  "installConfig": {
+    "hoistingLimits": "workspaces"
   }
 }

@@ -14,18 +14,20 @@
     ]
   },
   "scripts": {
-    "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock",
+    "lint:check": "ultra -r lint:check",
+    "lint:fix": "ultra -r lint:fix",
+    "test:run": "ultra -r test:run",
+    "tsc:check": "ultra -r tsc:check",
+
+    "metro:start": "yarn workspace @my-app/mobile start",
     "android:metro": "yarn workspace @my-app/mobile start",
     "android:start": "yarn workspace @my-app/mobile android",
     "android:studio": "yarn workspace @my-app/mobile studio",
-    "ios:metro": "yarn workspace @my-app/mobile start",
     "ios:start": "yarn workspace @my-app/mobile ios",
     "ios:xcode": "yarn workspace @my-app/mobile xcode",
     "ios:pods": "yarn workspace @my-app/mobile pods",
-    "lint": "ultra -r lint",
-    "lint:fix": "ultra -r lint:fix",
-    "test": "ultra -r test",
-    "typecheck": "ultra -r typecheck"
+
+    "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.29.3",

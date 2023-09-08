@@ -23,7 +23,7 @@ module.exports = {
     },
   },
   // Add additional Yarn workspace package roots to the module map.
-  // This allows importing importing from all the project's packages.
+  // This allows importing from all the project's packages.
   watchFolders: monorepoMetroTools.watchFolders,
   resolver: {
     // Ensure we resolve nohoist libraries from this directory.
