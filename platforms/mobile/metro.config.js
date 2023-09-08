@@ -1,7 +1,13 @@
 const exclusionList = require("metro-config/src/defaults/exclusionList");
-const { getMetroTools, getMetroAndroidAssetsResolutionFix } = require("react-native-monorepo-tools");
+const { getMetroTools, getMetroAndroidAssetsResolutionFix } = require("@packages/metro-monorepo-tools");
 
-const monorepoMetroTools = getMetroTools();
+const monorepoMetroTools = getMetroTools({
+  resolveFromCwdLibNames: [
+    "react",
+    "react-native",
+    "@react-native-async-storage/async-storage",
+  ]
+});
 
 const androidAssetsResolutionFix = getMetroAndroidAssetsResolutionFix();
 
