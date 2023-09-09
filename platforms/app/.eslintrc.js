@@ -1,3 +1,4 @@
 module.exports = {
-  extends: ["../../.eslintrc"]
+  extends: ['@react-native', '../../.eslintrc.js'],
+  "ignorePatterns": [".eslintrc.js"],
 };

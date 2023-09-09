@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@react-native', '../../.eslintrc'],
+  extends: ['@react-native', '../../.eslintrc.js'],
   overrides: [
     {
       files: './index.js',
