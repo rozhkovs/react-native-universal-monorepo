@@ -27,7 +27,7 @@
   "scripts": {
     "lint:check": "eslint ./",
     "lint:fix": "eslint --fix ./",
-    "test:run": "jest",
+    "test:run": "jest --passWithNoTests",
     "test:coverage": "yarn test -- --coverage"
   },
   "dependencies": {
