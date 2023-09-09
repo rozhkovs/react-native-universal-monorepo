@@ -3,7 +3,7 @@ module.exports = {
   overrides: [
     {
       files: './index.js',
-      parser: 'babel-eslint',
+      parser: '@babel/eslint-parser',
     },
   ],
 };

@@ -10,7 +10,7 @@
     "xcode": "xed ios",
     "pods": "cd ./ios && pod install && cd ..",
     "lint:check": "eslint .",
-    "lint:fix": "yarn lint --fix",
+    "lint:fix": "eslint --fix .",
     "test:run": "jest --passWithNoTests"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@babel/eslint-parser": "^7.22.15",
     "@babel/preset-env": "^7.20.0",
     "@babel/runtime": "^7.20.0",
     "@packages/metro-monorepo-tools": "workspace:*",
