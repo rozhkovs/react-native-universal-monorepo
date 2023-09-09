@@ -1,9 +1,9 @@
 module.exports = {
-  extends: ["../../.eslintrc"],
-  "overrides": [
+  extends: ['@react-native', '../../.eslintrc'],
+  overrides: [
     {
-      "files": "./index.js",
-      "parser": "babel-eslint"
-    }
+      files: './index.js',
+      parser: 'babel-eslint',
+    },
   ],
 };

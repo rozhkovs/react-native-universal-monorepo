@@ -1,3 +1,4 @@
+const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
 const exclusionList = require("metro-config/src/defaults/exclusionList");
 const { getMetroTools, getMetroAndroidAssetsResolutionFix } = require("@packages/metro-monorepo-tools");
 
@@ -11,7 +12,13 @@ const monorepoMetroTools = getMetroTools({
 
 const androidAssetsResolutionFix = getMetroAndroidAssetsResolutionFix();
 
-module.exports = {
+/**
+ * Metro configuration
+ * https://facebook.github.io/metro/docs/configuration
+ *
+ * @type {import('metro-config').MetroConfig}
+ */
+const config = {
   transformer: {
     // Apply the Android assets resolution fix to the public path...
     publicPath: androidAssetsResolutionFix.publicPath,
@@ -37,3 +44,5 @@ module.exports = {
     extraNodeModules: monorepoMetroTools.extraNodeModules,
   },
 };
+
+module.exports = mergeConfig(getDefaultConfig(__dirname), config);
