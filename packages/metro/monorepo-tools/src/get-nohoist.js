@@ -17,6 +17,7 @@ module.exports = function getNohoist(params = {}) {
   // TODO remove
   throw new Error('Метод уже не актуальный, нужно его удалить потом, когда будет без ссылок')
 
+  // eslint-disable-next-line no-unreachable
   const {
     cwd = process.cwd(),
     currentWorkspaceOnly = false,

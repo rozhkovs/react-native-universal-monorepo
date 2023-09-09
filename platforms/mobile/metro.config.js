@@ -1,13 +1,16 @@
 const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
-const exclusionList = require("metro-config/src/defaults/exclusionList");
-const { getMetroTools, getMetroAndroidAssetsResolutionFix } = require("@packages/metro-monorepo-tools");
+const exclusionList = require('metro-config/src/defaults/exclusionList');
+const {
+  getMetroTools,
+  getMetroAndroidAssetsResolutionFix,
+} = require('@packages/metro-monorepo-tools');
 
 const monorepoMetroTools = getMetroTools({
   resolveFromCwdLibNames: [
-    "react",
-    "react-native",
-    "@react-native-async-storage/async-storage",
-  ]
+    'react',
+    'react-native',
+    '@react-native-async-storage/async-storage',
+  ],
 });
 
 const androidAssetsResolutionFix = getMetroAndroidAssetsResolutionFix();
@@ -31,7 +34,7 @@ const config = {
   },
   server: {
     // ...and to the server middleware.
-    enhanceMiddleware: (middleware) => {
+    enhanceMiddleware: middleware => {
       return androidAssetsResolutionFix.applyMiddleware(middleware);
     },
   },

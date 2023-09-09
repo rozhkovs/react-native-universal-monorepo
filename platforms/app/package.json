@@ -5,24 +5,23 @@
   "main": "src",
   "scripts": {
     "lint:check": "eslint .",
-    "lint:fix": "yarn lint --fix",
+    "lint:fix": "eslint --fix .",
     "test:run": "jest --passWithNoTests",
     "test:watch": "yarn jest --watch",
     "tsc:check": "tsc"
-  },
-  "devDependencies": {
-    "@react-native-async-storage/async-storage": "^1.15.7",
-    "@tsconfig/react-native": "^3.0.2",
-    "@types/react": "^18.2.21",
-    "@types/react-native": "^0.72.2",
-    "typescript": "^4.4.2"
   },
   "peerDependencies": {
     "@react-native-async-storage/async-storage": "*",
     "react": "*",
     "react-native": "*"
   },
-  "installConfig": {
-    "hoistingLimits": "workspaces"
+  "devDependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.7",
+    "@tsconfig/react-native": "^3.0.2",
+    "@types/react": "^18.2.21",
+    "@types/react-native": "^0.72.2",
+    "eslint": "^8.49.0",
+    "react": "^18.2.0",
+    "typescript": "^4.4.2"
   }
 }
