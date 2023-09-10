@@ -12,7 +12,6 @@
     "lint:fix": "ultra -r lint:fix",
     "test:run": "ultra -r test:run",
     "tsc:check": "ultra -r tsc:check",
-
     "metro:start": "yarn workspace @my-app/mobile start",
     "android:metro": "yarn workspace @my-app/mobile start",
     "android:start": "yarn workspace @my-app/mobile android",
@@ -20,8 +19,9 @@
     "ios:start": "yarn workspace @my-app/mobile ios",
     "ios:xcode": "yarn workspace @my-app/mobile xcode",
     "ios:pods": "yarn workspace @my-app/mobile pods",
-
-    "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock"
+    "web:start": "yarn workspace @my-app/web start",
+    "web:build": "yarn workspace @my-app/web build",
+    "yarn:reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.6.0",
