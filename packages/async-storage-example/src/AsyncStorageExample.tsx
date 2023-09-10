@@ -3,8 +3,8 @@ import {Button, StyleSheet, Text, View} from 'react-native';
 import {useAsyncStorage} from '@react-native-async-storage/async-storage';
 
 // An example demonstrating the usage of native modules.
-// (Yes, it can be optimzed, but that's not the point of the example :P)
-export function AsyncStorageExample(): JSX.Element {
+// (Yes, it can be optimized, but that's not the point of the example :P)
+export default function AsyncStorageExample() {
   const [value, setValue] = useState('     ');
   const {getItem, setItem} = useAsyncStorage('@counter');
 

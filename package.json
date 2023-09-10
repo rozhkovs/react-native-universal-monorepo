@@ -4,7 +4,8 @@
   "private": true,
   "workspaces": [
     "platforms/*",
-    "packages/metro/*"
+    "packages/metro/*",
+    "packages/async-storage-example"
   ],
   "scripts": {
     "lint:check": "ultra -r lint:check",
