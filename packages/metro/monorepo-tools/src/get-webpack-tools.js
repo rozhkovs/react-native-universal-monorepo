@@ -25,7 +25,6 @@ module.exports = function getWebpackTools(params = {}) {
         : path.resolve(cwd, `./node_modules/${nohoistLibName}`);
   });
   function addNohoistAliases(webpackConfig) {
-    console.log('nohoistAlias', nohoistAlias);
     webpackConfig.resolve.alias = {
       ...webpackConfig.resolve.alias,
       ...nohoistAlias,

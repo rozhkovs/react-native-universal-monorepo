@@ -10,6 +10,8 @@ const monorepoMetroTools = getMetroTools({
     'react',
     'react-native',
     '@react-native-async-storage/async-storage',
+    '@babel/core',
+    '@babel/runtime',
   ],
 });
 
