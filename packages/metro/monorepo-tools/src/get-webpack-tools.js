@@ -1,5 +1,4 @@
 const path = require("path");
-const getNohoist = require("./get-nohoist");
 const getWorkspaces = require("./get-workspaces");
 
 /**
@@ -12,25 +11,21 @@ const getWorkspaces = require("./get-workspaces");
  * Return Webpack tools to make it compatible with Yarn workspaces.
  * @param {object} params - Input parameters
  * @param {string} [params.cwd] - Current working dir (defaults to process.cwd()).
+ * @param {string[]} [params.resolveFromCwdLibNames] - Allow libraries only from the current directory (e.g., react, react-native, ...).
  * @returns {MonorepoWebpackConfig} Webpack config for this monorepo.
  */
 module.exports = function getWebpackTools(params = {}) {
-  const { cwd = process.cwd() } = params;
+  const { cwd = process.cwd(), resolveFromCwdLibNames = [] } = params;
 
-  // Ensure nohoisted libraries are resolved from the current workspace
-  const nohoistLibNames = getNohoist({
-    cwd,
-    currentWorkspaceOnly: true,
-    libNamesOnly: true,
-  });
   const nohoistAlias = {};
-  nohoistLibNames.forEach((nohoistLibName) => {
+  resolveFromCwdLibNames.forEach((nohoistLibName) => {
     nohoistAlias[nohoistLibName] =
       nohoistLibName === "react-native"
         ? path.resolve(cwd, "./node_modules/react-native-web")
         : path.resolve(cwd, `./node_modules/${nohoistLibName}`);
   });
   function addNohoistAliases(webpackConfig) {
+    console.log('nohoistAlias', nohoistAlias);
     webpackConfig.resolve.alias = {
       ...webpackConfig.resolve.alias,
       ...nohoistAlias,
